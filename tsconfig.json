@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                         // Código moderno compatible con navegadores actuales
+    "module": "ES6",                         // Necesario para usar "type=module" en el script
+    "outDir": "./public",           // Genera un único archivo JS para el navegador
+    "rootDir": "./src",                      // Carpeta donde escribís tu TypeScript
+    "strict": true,                          // Buena práctica: modo estricto de TypeScript
+    "esModuleInterop": true,                 // Para compatibilidad con librerías modernas
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}
