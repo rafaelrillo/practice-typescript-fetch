@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <title>Pokémon API + TypeScript</title>
+  <link rel="stylesheet" href="./src/public/styles.css" />
 </head>
 <body>
-  <h1>Pokémon List</h1>
-  <input type="text" id="search" placeholder="Buscar pokemon..." />
+  <h1>Pokémon Finder</h1>
+  <input type="text" id="search" placeholder="Search pokemon..." />
+  <p id="no-results" style="display: none">No results</p>
   <ul id="pokemon-list"></ul>
   <script src="public/main.js" type="module"></script>
 </body>

@@ -17,6 +17,7 @@ interface PokemonDetail {
 
 const listElement = document.querySelector("#pokemon-list") as HTMLUListElement;
 const searchInput = document.querySelector("#search") as HTMLInputElement;
+const noResults = document.querySelector("#no-results") as HTMLParagraphElement;
 
 async function fetchPokemonList() {
   const response = await fetch(API_URL)
@@ -34,8 +35,8 @@ async function fetchPokemonList() {
     img.alt = pokemon.name;
     img.width = 100;
 
-    listItem.appendChild(nameSpan)
     listItem.appendChild(img);
+    listItem.appendChild(nameSpan)
     listElement.appendChild(listItem);
   }
 }
@@ -56,6 +57,11 @@ searchInput.addEventListener("input", () => {
     const isVisible = name.includes(searchTerm);
     (item as HTMLLIElement).style.display = isVisible ? "block" : "none";
   })
+
+  const visibleItems = Array.from(listItems).filter(item => {
+    return (item as HTMLLIElement).style.display !== "none";
+  })
+  noResults.style.display = visibleItems.length === 0 ? "block" : "none"
 })
 
 fetchPokemonList();
